@@ -38,3 +38,7 @@ User management is not done yet.  Make yourself a login using `manage.py creates
 
 And that's it.
 
+TODO
+=============
+* Apply Bootstrap4 theme 
+* Spy line when reading to label the post read
