@@ -36,13 +36,13 @@
 }
 
 body {
-    padding-top: 50px;
+    /* padding-top: 50px; */
     font-family: Helvetica;
 }
 
-.navbar {
-    background-color: #DCE8C4;
-}
+/* .navbar { */
+    /* background-color: #DCE8C4; */
+/* } */
 
 .logo {
     padding-top:10px;
@@ -238,8 +238,8 @@ a img {
 }
 
 a, a:hover {
-	color: #7EA02D;
-	text-decoration: none;
+	/* color: #7EA02D; */
+	/* text-decoration: none; */
 }
 
 .date, .date a {
