@@ -21,9 +21,20 @@
                     <input type="search" id="searchfeeds" class="form-control" placeholder="Filter">
                 </div>
 				{% for s in sources %}
-					<div id="s{{s.id}}" class="feedbutton{% if not s.source %} group{% endif %}"> 
-						<a id="sa{{s.id}}" onclick="read({{s.id}}, 0)" href="#" class="feedbutton">{{s.name}}<span id="uc{{s.id}}" class="unreadcount">{% if s.is_river %}R{% else %}({{s.undread_count}}){% endif %}</span></a> 
-					</div>
+                <div id="s{{s.id}}"
+                     class="feedbutton{% if not s.source %} group{% endif %}">
+                    <a id="sa{{s.id}}" onclick="read({{s.id}}, 0)"
+                       href="#" class="feedbutton">
+                        {{s.name}}
+                        <span id="uc{{s.id}}" class="unreadcount">
+                            {% if s.is_river %}
+                            R
+                            {% else %}
+                            ({{s.undread_count}})
+                            {% endif %}
+                        </span>
+                    </a>
+                </div>
 				{% endfor %}
 			</div>
 		</div>
@@ -36,19 +47,13 @@
 {% csrf_token %}
 
 <script>
-
     //console.log('yo!');
-
     var last_read = null;
-    var last_page = null
+    var last_page = null;
 
     function read(fid, page) {
-
-        if (last_read == fid && last_page == page) {
-            return;
-        }
+        if (last_read == fid && last_page == page) {return;}
         $("#uc" + fid).html("(0)");
-
         {% if all %}
             if (last_read != null) {
                 $("#s" + last_read).removeClass("read");
@@ -103,9 +108,6 @@
 
         }, 100);
 
-
-
-
         return false;
     }
 
@@ -137,14 +139,11 @@
 
     $(document).ready(function(){
 
-
         // Bind to StateChange Event
         History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
             //console.log("statechange");
 
-
             var State = History.getState(); // Note: We are using History.getState() instead of event.state
-
 
             if (!State.data.hasOwnProperty("feed")) {
                 //console.log("unreading");
@@ -185,7 +184,6 @@
         //}
 
     }
-
 
     function unsub(sid) {
         if (confirm("Sure?")) {

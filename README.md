@@ -11,13 +11,13 @@ FeedThing treats feeds in the specific manner that I believe to be right.
 - High traffic news feeds display all the posts in *reverse chronological* order, paginated 20 posts to a page.
 - Regular feeds that have been read up to date display their old posts in *reverse chronological* order, paginated.
  
-So you can use FeedThing as both a catch-up, never-miss-a-post service, and a Dave Winer-esque river of news _at the same time_.
+So you can use FeedThing as both a catch-up, never-miss-a-post service, and a Dave Winer-esque river of news at the same time.
 
 Feeds can be placed into folders in which case all the feeds in the folder are treated as if they were a single feed.  There is no further nesting, folders are a single level deep.
 
 A single FeedThing installation can support multiple users, each with their own settings and list of feeds.  Embarrassingly, there is no UI to create those users just now.
 
-Altough I have used this as my daily feed reader for years, it is rather unfinished.  Specifically there are features that I feel a feed reader should have that are started but not really done, or done in a half-arsed way.
+Although I have used this as my daily feed reader for years, it is rather unfinished.  Specifically there are features that I feel a feed reader should have that are started but not really done, or done in a half-arsed way.
 
 Enjoy.
 
@@ -40,5 +40,5 @@ And that's it.
 
 TODO
 =============
-* Apply Bootstrap4 theme 
 * Spy line when reading to label the post read
+* unSave js function missing
