@@ -136,7 +136,9 @@
         });
     }
 
-
+// This is record the history of browser.
+// Require history.js.
+// See https://github.com/browserstate/history.js for more.
     $(document).ready(function(){
 
         // Bind to StateChange Event
@@ -164,8 +166,6 @@
         {% endif %}
 
     });
-
-
 
     function unRead() {
         //window.history.back();
@@ -202,11 +202,19 @@
     }
 
     function savePost(pid) {
-        $.post("/post/" + pid + "/save/",function(data) {
-            if (data=="OK") {
-                $("#star-" + pid).removeClass("far").addClass("fas");
-            }
-        });
+        if ($("#star-" + pid).hasClass('far')){
+            $.post("/post/" + pid + "/save/",function(data) {
+                if (data=="OK") {
+                    $("#star-" + pid).removeClass("far").addClass("fas");
+                }
+            });
+        } else if ($("#star-" + pid).hasClass('fas')){
+            $.post("/post/" + pid + "/forgot/",function(data) {
+                if (data=="OK") {
+                    $("#star-" + pid).removeClass("fas").addClass("far");
+                }
+            });
+        }
     }
 
 </script>

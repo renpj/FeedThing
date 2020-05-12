@@ -554,6 +554,14 @@ def readfeed(request, fid):
     vals["paginator"] = paginator
     vals["subscription_map"] = sub_map
 
+    # get the save state for posts
+    issaved = []
+    for p in posts:
+        if p.savedpost_set.all():
+            issaved.append(p.id)
+
+    vals["issaved"] = issaved
+
     if sub.is_river:
         return render(request, 'river.html', vals)
     else:
