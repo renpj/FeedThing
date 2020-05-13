@@ -216,7 +216,22 @@
             });
         }
     }
+    $('#feedcontent').ready(function(){
+    console.info("这是info3");
+    $(this).scrollspy({target: '#navbar-example'});
+    //$('#feedscroller').on('activate.bs.scrollspy', function () {
+	//	var currentItem = $(".posts h3 > a").text();
+	//	console.info("这是info1");
+	//	$("#activeitem").html("目前您正在查看 - " + currentItem);
+    //});
 
+console.info("这是info2");
+    $(this).each(function () {
+console.info("这是info2");
+        var $spy = $(this).scrollspy('refresh')
+        console.info("这是info2");
+    });
+    });
 </script>
 
 
